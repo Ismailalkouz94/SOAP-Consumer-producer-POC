@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.soap.com/calculator/gen"
+           targetNamespace="http://www.soap.com/calculator/gen" elementFormDefault="qualified">
+
+    <xs:element name="add">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="request" type="tns:calElements"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="subtract">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="request" type="tns:calElements"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="response">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="calElements">
+        <xs:sequence>
+            <xs:element name="firstNumber" type="xs:int"/>
+            <xs:element name="secondNumber" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
