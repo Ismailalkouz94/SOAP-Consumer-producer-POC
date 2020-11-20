@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "a4e86e7d-e3ba-441f-aa8e-2c308936d43a",
+		"name": "SOAP POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add test request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <add xmlns=\"http://www.soap.com/calculator/gen\">\r\n            <request>\r\n                <firstNumber>5</firstNumber>\r\n                <secondNumber>10</secondNumber>\r\n            </request>\r\n        </add>\r\n    </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/ws/calculator.wsdl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"ws",
+						"calculator.wsdl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
